@@ -6,9 +6,4 @@ test.describe("Settings Page", () => {
         await expect(loginPage.page).toHaveURL("https://demo.realworld.show/settings");
     });
 
-    
-
-
-
-
 });

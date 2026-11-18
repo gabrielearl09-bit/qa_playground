@@ -7,6 +7,7 @@ export class ArticlePage {
     readonly articleBody: any;
     readonly tags: any;
     readonly publishButton: any;
+    readonly editArticleButton: any;
 
     constructor(page: Page) {
         this.page = page;
@@ -15,6 +16,7 @@ export class ArticlePage {
         this.articleBody = page.getByRole('textbox', { name: 'Write your article (in' });
         this.tags = page.getByRole('textbox', { name: 'Enter tags' });
         this.publishButton = page.getByRole('button', { name: 'Publish Article' });
+        this.editArticleButton = page.getByRole('link', { name: ' Edit Article' }).first();
     }
 
     
