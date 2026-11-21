@@ -142,17 +142,23 @@ console.log(isPositiveNegative(-1));
 
 // 13. Find the Largest Number
 // Accept three numbers and return the largest.
-function returnLargestNumber(num1 : number, num2 : number, num3 : number){
+function returnLargestNumber(
+    num1: number,
+    num2: number,
+    num3: number
+): number {
     let numbers: number[] = [num1, num2, num3];
-    let highestValue = 0;
-    for(const num of numbers){  
-        if(num >= highestValue){
+
+    let highestValue = numbers[0];
+
+    for (const num of numbers) {
+        if (num > highestValue) {
             highestValue = num;
-        } 
+        }
     }
 
-    return `The highest value is ${highestValue}`
-} 
+    return highestValue;
+}
 
 console.log(returnLargestNumber(5,8,6));
 
@@ -233,12 +239,9 @@ console.log(discountCalculator(999));
 
 // 19. Leap Year Checker
 // Create a function that determines whether a year is a leap year.
-function leapYearChecker(year: number){
-    if(year % 4 == 0){
-        return true;
-    } else {
-        return false;
-    }
+function leapYearChecker(year: number): boolean {
+    return year % 400 === 0 ||
+        (year % 4 === 0 && year % 100 !== 0);
 }
 
 console.log(leapYearChecker(1999));
@@ -247,18 +250,29 @@ type Operators = "+" | "-" | "*" | "/";
 
 // 20. Simple Calculator
 // Create a function that accepts two numbers and an operator (+, -, *, /) and returns the result. Handle division by zero.
-function simpleCalculator(num1: number, num2: number, operator: Operators){
-    switch(operator){
+function simpleCalculator(
+    num1: number,
+    num2: number,
+    operator: Operators
+): number | string {
+    switch (operator) {
         case "+":
             return num1 + num2;
+
         case "-":
             return num1 - num2;
+
         case "*":
             return num1 * num2;
+
         case "/":
-            return num1/num2;
+            if (num2 === 0) {
+                return "Cannot divide by zero";
+            }
+            return num1 / num2;
+
         default:
-            return "Invalid Operator"
+            return "Invalid Operator";
     }
 }
 
@@ -312,3 +326,18 @@ function calculateFactorial(num: number){
 }
 
 calculateFactorial(10);
+
+// 26 . Count Digits
+// Count how many digits are in a given positive integer.
+function countDigits(num: number){
+    for(let i = 0; i < num; i++){
+
+    }
+}
+
+// 27. Reverse a number
+// Reverse the digits of a number.
+// Example: 12345 becomes 54321.
+function reverseNumber(num: number){
+    
+}
