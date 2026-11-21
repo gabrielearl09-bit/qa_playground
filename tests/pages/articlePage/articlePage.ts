@@ -19,5 +19,4 @@ export class ArticlePage {
         this.editArticleButton = page.getByRole('link', { name: ' Edit Article' }).first();
     }
 
-    
 }
