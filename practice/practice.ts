@@ -338,6 +338,16 @@ function countDigits(num: number){
 // 27. Reverse a number
 // Reverse the digits of a number.
 // Example: 12345 becomes 54321.
-function reverseNumber(num: number){
-    
+function reverseNumber(not: number){
+    // 1. Handle the sign separately so it doesn't end up at the end of the string
+  const isNegative = n < 0;
+  
+  // 2. Convert the absolute number to a string
+  const absStr = Math.abs(n).toString();
+  
+  // 3. Split into an array of characters, reverse it, and join it back
+  const reversedStr = absStr.split("").reverse().join("");
+  
+  // 4. Reapply the negative sign if it was originally negative
+  return isNegative ? `-${reversedStr}` : reversedStr;
 }
